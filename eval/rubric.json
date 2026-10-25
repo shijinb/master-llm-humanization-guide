@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "scale": [0, 1, 2],
+  "publish_threshold": {
+    "minimum_total": 13,
+    "gates": { "accuracy": 2, "honesty": 2 }
+  },
+  "criteria": [
+    { "id": "accuracy", "name": "Accuracy", "levels": ["Any unsupported or false claim", "All claims supported, sources not recorded", "Every claim traceable to a recorded source"] },
+    { "id": "information_gain", "name": "Information gain", "levels": ["Restates common knowledge", "Some sections add something new", "Every major section adds a number, example, trade-off or first-hand point"] },
+    { "id": "audience_fit", "name": "Audience fit", "levels": ["Wrong level or tone", "Mostly right, some lapses", "Right assumed knowledge and tone throughout"] },
+    { "id": "specificity", "name": "Specificity", "levels": ["Mostly adjectives and vague quantities", "Mixed", "Claims carried by numbers, names and examples"] },
+    { "id": "structure", "name": "Structure and format", "levels": ["Wrong shape for the channel", "Right shape, weak opening or ending", "Opens with the point, ends with an action, scannable"] },
+    { "id": "readability", "name": "Readability", "levels": ["Monotone or hard to follow", "Readable, some long or uniform stretches", "Varied rhythm, plain words, reads well aloud"] },
+    { "id": "cliche_free", "name": "Cliché-free", "levels": ["Several overused phrases or filler transitions", "One or two", "None, or each one deliberate"] },
+    { "id": "honesty", "name": "Honesty", "levels": ["Fabricated experience, testimonial or result", "Overstated claims", "Claims match the evidence; limitations stated"] }
+  ]
+}
