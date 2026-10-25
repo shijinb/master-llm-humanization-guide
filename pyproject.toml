@@ -1,0 +1,37 @@
+[project]
+name = "prose-check"
+version = "1.0.0"
+description = "Editorial checks for drafts: overused phrases, vague quantities, sentence rhythm, repeated figures."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Shijin" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.10"]
+
+[project.scripts]
+prose-check = "prose_check.cli:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["prose_check"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["SIM905"]  # "a b c".split() is clearer than a long list literal
+
+[tool.mypy]
+strict = true
+files = ["prose_check"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
